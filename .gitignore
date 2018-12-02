@@ -1,0 +1,4 @@
+.stack-work/
+adventofcode.cabal
+*~
+*.swp
