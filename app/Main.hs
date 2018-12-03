@@ -1,9 +1,16 @@
 module Main where
 
+import System.Environment
 import Problem1
-import Data.Maybe
 
 main :: IO ()
 main = do
-    input <- readFile "app/input/problem1"
-    putStrLn $ show $ frequencyStrings $ lines input
+    args <- getArgs
+    let problem = head args
+    input <- readFile $ "app/input/problem" ++ problem
+    let solution = solveProblem "1"
+    putStrLn $ show $ (`map` solution) ($ input)
+
+
+solveProblem :: String -> [String -> Int]
+solveProblem "1" = [lastFrequency, firstRepeatedFrequency]
