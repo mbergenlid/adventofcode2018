@@ -2,15 +2,17 @@ module Main where
 
 import System.Environment
 import Problem1
+import Problem2
 
 main :: IO ()
 main = do
     args <- getArgs
     let problem = head args
     input <- readFile $ "app/input/problem" ++ problem
-    let solution = solveProblem "1"
+    let solution = solveProblem problem
     putStrLn $ show $ (`map` solution) ($ input)
 
 
-solveProblem :: String -> [String -> Int]
-solveProblem "1" = [lastFrequency, firstRepeatedFrequency]
+solveProblem :: String -> [String -> String]
+solveProblem "1" = [show . lastFrequency, show . firstRepeatedFrequency]
+solveProblem "2" = [show . checksum . lines, show . (map (\(a,b) -> commonLetters a b)) . findOffByPairs . lines]
