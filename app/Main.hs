@@ -3,6 +3,7 @@ module Main where
 import System.Environment
 import Problem1
 import Problem2
+import Problem3
 
 main :: IO ()
 main = do
@@ -16,3 +17,4 @@ main = do
 solveProblem :: String -> [String -> String]
 solveProblem "1" = [show . lastFrequency, show . firstRepeatedFrequency]
 solveProblem "2" = [show . checksum . lines, show . (map (\(a,b) -> commonLetters a b)) . findOffByPairs . lines]
+solveProblem "3" = [show . squaresInTwoOrMore . (map read) . lines, show . doesNotOverlapAnyOther . (map read) . lines]
