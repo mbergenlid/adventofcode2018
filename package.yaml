@@ -24,6 +24,7 @@ dependencies:
 - time >= 1.8.0
 - containers
 - regex-pcre >= 0.94
+- strings == 1.1
 
 library:
   source-dirs: src

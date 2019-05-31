@@ -1,10 +1,12 @@
 module Main where
 
 import System.Environment
+import Data.Strings
 import Problem1
 import Problem2
 import Problem3
 import Problem4
+import Problem5
 
 main :: IO ()
 main = do
@@ -20,3 +22,4 @@ solveProblem "1" = [show . lastFrequency, show . firstRepeatedFrequency]
 solveProblem "2" = [show . checksum . lines, show . (map (\(a,b) -> commonLetters a b)) . findOffByPairs . lines]
 solveProblem "3" = [show . squaresInTwoOrMore . (map read) . lines, show . doesNotOverlapAnyOther . (map read) . lines]
 solveProblem "4" = [\s -> show findBestGuard, \s -> show strategy2 ]
+solveProblem "5" = [show . units . polymer . sTrim]
