@@ -1,5 +1,6 @@
 module Problem3
 (
+    problem3,
     Claim(..),
     Rectangle(..),
     Point(..),
@@ -9,6 +10,10 @@ module Problem3
     squaresInTwoOrMore,
     doesNotOverlapAnyOther
 ) where
+
+problem3 :: String -> String -> String
+problem3 "1" = show . squaresInTwoOrMore . (map read) . lines
+problem3 "2" = show . doesNotOverlapAnyOther . (map read) . lines
 
 data Claim = Claim Int Rectangle
     deriving (Show, Eq)

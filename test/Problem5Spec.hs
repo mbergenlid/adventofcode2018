@@ -38,3 +38,7 @@ spec = do
         it "Polymer more advanced 2" $
             units (polymer "JLljBbTtzShHsZRBbEelLOoFfiyYIZzeELlBbuUrTtaIiXHtThFoOfzZkKNOojJpPXxrxXRcVvmbBTTttMEeQgGqpmMTtsSGgPCnknNKrRPPpeEpOoTtKkwWttTAaPTtpTjJqQXnNhHxDdME") `shouldBe` 4
             --JLljBbTtzShHsZRBbEelLOoFfiyYIZzeELlBbuUrTtaIiXHtThFoOfzZkKNOojJpPXxrxXRcVvmbBTTttMEeQgGqpmMTtsSGgPCnknNKrRPPpeEpOoTtKkwWttTAaPTtpTjJqQXnNhHxDdME
+            --
+    describe "Shortest polymer" $
+        it "Works on example" $
+            (units . shortestPolymer) "dabAcCaCBAcCcaDA" `shouldBe` 4

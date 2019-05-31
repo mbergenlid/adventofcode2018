@@ -1,5 +1,6 @@
 module Problem4
 (
+    problem4,
     strategy2,
     findBestGuard,
     Entry(..),
@@ -15,12 +16,18 @@ module Problem4
     bestMinute
 ) where
 
+
+
 import Data.Time.Clock
 import Data.Time.Format
 import Data.Time.LocalTime
 import Data.Map (Map)
 import qualified Data.Map as M
 import Data.List
+
+problem4 :: String -> String -> String
+problem4 "1" s = show findBestGuard
+problem4 "2" s = show strategy2
 
 findBestGuard :: Int
 findBestGuard = id * ((snd . bestMinute) bestGuard)

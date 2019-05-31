@@ -25,6 +25,7 @@ dependencies:
 - containers
 - regex-pcre >= 0.94
 - strings == 1.1
+- text == 1.2.3.1
 
 library:
   source-dirs: src

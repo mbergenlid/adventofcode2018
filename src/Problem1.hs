@@ -1,6 +1,7 @@
 
 module Problem1
 (
+    problem1,
     lastFrequency,
     firstRepeatedFrequency,
     frequencies,
@@ -9,6 +10,10 @@ module Problem1
 ) where
 
 import qualified Data.Set as Set
+
+problem1 :: String -> String -> String
+problem1 "1" = show . lastFrequency
+problem1 "2" = show . firstRepeatedFrequency
 
 lastFrequency :: String -> Int
 lastFrequency s = (last . frequencies) $ map parse $ lines s

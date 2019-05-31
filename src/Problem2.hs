@@ -1,5 +1,6 @@
 module Problem2
 (
+    problem2,
     countLetters,
     boxValue,
     checksum,
@@ -9,6 +10,10 @@ module Problem2
 ) where
 
 import qualified Data.Map as Map
+
+problem2 :: String -> String -> String
+problem2 "1" = show . checksum . lines
+problem2 "2" = show . (map (\(a,b) -> commonLetters a b)) . findOffByPairs . lines
 
 commonLetters :: String -> String -> String
 commonLetters [] [] = ""
